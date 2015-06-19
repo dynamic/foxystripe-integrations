@@ -3,8 +3,10 @@
 class FoxyStripeIntegrationsExtension extends Extension {
 	
 	public function addIntegrations($FoxyData) {
-		
+
 		$config = SiteConfig::current_site_config();
+
+		if(!$config->Integrations()->exists()) { SS_Log::log("No integrations at this time.", SS_Log::WARN); }
 		
 		foreach ($config->Integrations() as $integration) {
 			
@@ -22,7 +24,8 @@ class FoxyStripeIntegrationsExtension extends Extension {
 			if($result != "foxy") {
 				echo '<p>' . $integration->Name . ' failed</p>';
 			}
-			
+
+
 			SS_Log::log($integration->Name . " responded " . $result, SS_Log::WARN);
 			$result = "";
 			

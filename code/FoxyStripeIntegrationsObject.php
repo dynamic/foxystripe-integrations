@@ -18,5 +18,14 @@ class FoxyStripeIntegrationsObject extends DataObject {
 		'Name',
 		'URL'
 	);
+
+	public function getCMSFields(){
+		$fields = parent::getCMSFields();
+
+		$fields->removeByName('SiteConfigID');
+
+		$this->extend('updateCMSFields', $fields);
+		return $fields;
+	}
 	
 }
