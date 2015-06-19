@@ -4,6 +4,6 @@ Name: foxystripe-integrations
 SiteConfig:
   extensions:
     - FoxyStripeIntegrationsSiteConfig
-FoxyCart_Controller:
+FoxyStripe_Controller:
   extensions:
     - FoxyStripeIntegrationsExtension
