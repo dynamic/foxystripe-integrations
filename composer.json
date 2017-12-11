@@ -13,7 +13,7 @@
   "require": {
     "silverstripe/framework": "^3.1",
     "silverstripe/cms": "^3.1",
-    "dynamic/foxystripe": "dev-master"
+    "dynamic/foxystripe": "^1.1"
   },
   "suggest": {
   },
