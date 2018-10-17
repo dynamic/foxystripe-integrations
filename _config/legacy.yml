@@ -1,0 +1,6 @@
+---
+name: foxystripe-integrations-legacy
+---
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    FoxyStripeIntegrationsObject: Dynamic\FoxyStripe\Model\FoxyStripeIntegrationsObject

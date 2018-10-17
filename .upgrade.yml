@@ -1,0 +1,4 @@
+mappings:
+  FoxyStripeIntegrationsObject: Dynamic\FoxyStripe\Model\FoxyStripeIntegrationsObject
+  FoxyStripeIntegrationsSiteConfig: Dynamic\FoxyStripe\ORM\FoxyStripeIntegrationsSiteConfig
+  FoxyStripeIntegrationsExtension: Dynamic\FoxyStripe\ORM\FoxyStripeIntegrationsExtension
