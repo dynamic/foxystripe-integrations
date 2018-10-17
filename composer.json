@@ -2,22 +2,38 @@
   "name": "dynamic/foxystripe-integrations",
   "description": "FoxyStripe Integrations is an add-on to FoxyStripe that allows integrations with the Datafeed.",
   "keywords": ["silverstripe", "foxycart", "foxystripe", "datafeed", "dynamic", "ecommerce"],
-  "type": "silverstripe-module",
+  "type": "silverstripe-vendormodule",
   "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Dynamic Inc",
-      "email": "dev@dynamicagency.com"
+      "email": "dev@dynamicagency.com",
+      "homepage": "http://www.dynamicagency.com"
     }
   ],
   "require": {
-    "silverstripe/framework": "^3.1",
-    "silverstripe/cms": "^3.1",
-    "dynamic/foxystripe": "^1.1"
+    "php": ">=5.6",
+    "dynamic/foxystripe": "^4.0",
+    "silverstripe/recipe-core": "^4.2",
+    "silverstripe/vendor-plugin": "^1.0"
   },
-  "suggest": {
+  "require-dev": {
+    "phpunit/PHPUnit": "^5.7",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "config": {
+    "process-timeout": 600
+  },
+  "autoload": {
+    "psr-4": {
+      "Dynamic\\FoxyStripe\\": "src/",
+      "Dynamic\\FoxyStripe\\Test\\": "tests/"
+    }
   },
   "extra": {
-    "installer-name": "foxystripe-integrations"
+    "installer-name": "foxystripe-integrations",
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    }
   }
 }

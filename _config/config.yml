@@ -1,9 +1,9 @@
 ---
 Name: foxystripe-integrations
 ---
-SiteConfig:
+Dynamic\FoxyStripe\Model\FoxyStripeSetting:
   extensions:
-    - FoxyStripeIntegrationsSiteConfig
-FoxyStripe_Controller:
+    - Dynamic\FoxyStripe\ORM\FoxyStripeIntegrationsSiteConfig
+Dynamic\FoxyStripe\Controller\FoxyStripeController:
   extensions:
-    - FoxyStripeIntegrationsExtension
+    - Dynamic\FoxyStripe\ORM\FoxyStripeIntegrationsExtension
