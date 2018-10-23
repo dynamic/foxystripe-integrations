@@ -2,20 +2,24 @@
 
 namespace Dynamic\FoxyStripe\ORM;
 
-use SS_Log;
+use Dynamic\FoxyStripe\Model\FoxyStripeSetting;
+use Psr\Log\LoggerInterface;
+use SilverStripe\Core\Injector\Injector;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\Core\Extension;
 
 class FoxyStripeIntegrationsExtension extends Extension
 {
-    
+    /**
+     * @param $FoxyData
+     * @throws \SilverStripe\ORM\ValidationException
+     */
     public function addIntegrations($FoxyData)
     {
-
-        $config = SiteConfig::current_site_config();
+        $config = FoxyStripeSetting::current_foxystripe_setting();
 
         if (!$config->Integrations()->exists()) {
-            SS_Log::log("No integrations at this time.", SS_Log::WARN);
+            Injector::inst()->get(LoggerInterface::class)->debug("No integrations at this time.");
         }
         
         foreach ($config->Integrations() as $integration) {
@@ -35,8 +39,7 @@ class FoxyStripeIntegrationsExtension extends Extension
                 echo '<p>' . $integration->Name . ' failed</p>';
             }
 
-
-            SS_Log::log($integration->Name . " responded " . $result, SS_Log::WARN);
+            Injector::inst()->get(LoggerInterface::class)->debug($integration->Name . " responded " . $result);
             $result = "";
         }
     }
